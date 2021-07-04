@@ -30,7 +30,7 @@
 				<ul class="nav">
 					<li><a href="#One">Sprint One</a></li>
 					<li><a href="#Two">Sprint Two</a></li>
-					<li><a href="#">Sprint Three</a></li>
+					<li><a href="#Three">Sprint Three</a></li>
 				</ul>
 			</div>
 			<div class="content">
@@ -47,14 +47,15 @@
 <h2>Brief</h2>
 <p>I aim to create a program for Marsden pizzas. It will be for users that are wanting to order pizzas from the menu.</p>
 <h2>Initial project backlog</h2>
-<img src="assets/img/initialprojectbacklog.png" width="100%" alt="">
+<img src="assets/img/initialprojectbacklog.png" width="100%" alt="Image of initial project backlog">
+
 <h2><a id="One">Sprint One</a></h2>
 <h3>Rough program plan for sprint one:</h3>
-<img src="assets/img/sprint1plan.jpg" width="30%" alt="">
+<img src="assets/img/sprint1plan.jpg" width="30%" alt="Image of program plan">
 <h3>Sprint one project board in progress:</h3>
-<img src="assets/img/sprint_1_board.png" width="60%" alt="">
+<img src="assets/img/sprint_1_board.png" width="60%" alt="Image of initial project backlog at sprint one">
 <h3>Sprint one test:</h3>
-<img src="assets/img/sprint1test.png" width="60%" alt="">
+<img src="assets/img/sprint1test.png" width="60%" alt="Image of test">
 <p style="padding-top: 10px;">From the image above, it shows how my sprint one is working how I had imagined and hoped
 	that it would, no unexpected errors occurred. The temporary menu (I intent to add more types in the future) prints
 	correctly and how I designed, the option to quit also works properly. I also added styling which printed in the way
@@ -65,25 +66,69 @@ available to the user when they select what option they would like to run. I als
 in future versions, the user will be able to choose the types they would like to order. For the next sprint, I would like
 to include a function that allows the user to choose whether they are going to have their order ready for pick-up or for
 delivery. If this works successfully, I will then expand the program further.</p>
+
 <h2><a id="Two">Sprint Two</a></h2>
 <h3>Rough program plan for sprint two:</h3>
-<img src="assets/img/sprint2plan.jpg" width="30%" alt="">
+<img src="assets/img/sprint2plan.jpg" width="30%" alt="Image of program plan">
 <h3>Sprint two project board in progress:</h3>
-<img src="assets/img/sprint_2_board.png" width="60%" alt="">
+<img src="assets/img/sprint_2_board.png" width="60%" alt="Image of initial project backlog at sprint two">
 <h3>Sprint two testing:</h3>
-<img src="assets/img/sprint2test1.png" width="50%" alt="">
-<img src="assets/img/sprint2test2.png" width="50%" alt="">
+<img src="assets/img/sprint2test1.png" width="50%" alt="Image of test 1">
+<img src="assets/img/sprint2test2.png" width="50%" alt="Image of test 2">
 <p style="padding-top: 10px;">From the two images above, it shows how the function I have added and the dictionary is correctly working. In the
 first image, I also printed out the dictionary that includes all of the users information to check if the information the
 user entered, has been inserted into the dictionary in the main function (which it has). The user is also correctly asked
 information that would be needed, according to their choice of either "Pick-up" or "Delivery". My styling has printed out
 well and I can now pick and choose information that I would like to use in future versions from the main dictionary.</p>
-<img src="assets/img/sprint2test3.png" width="50%" alt="">
+<img src="assets/img/sprint2test3.png" width="50%" alt="Image of test 3">
 <p style="padding-top: 10px;">I have not yet included validation, which as shown in the image above, is needed. The user
 is able to crash the program if they entered the wrong input or have a name with special characters and no there is no
 maximum and minimum length. These are all aspects of validation that I would like to include in a future sprint</p>
 <h3><u>Sprint review</u></h3>
-<p>When </p>
+<p>When going about this sprint, there were multiple ways of designing a delivery pickup function. I could have made it
+with lists or individual values, but I thought that the best way to go about it was by creating a dictionary. The
+dictionary includes all of the information that would be needed about the user, according to whether they are wanting
+delivery or pickup. This way, if I wanted to include any personal information in future functions (like the cost), then
+all that I would need to do is pass it through the function, and pick out the information I would like to use. If I had
+done it a different way, then my code could get cluttered or I would need to call a range of arguments for information
+that is all related. I can also easily comment out this function when I am testing and add it later to be more efficient
+with my time. I think the function works well but will definitely need validation in a future sprint so my program can
+handle unexpected input, I have mentioned this in my tests for this sprint. </p>
+
+<h2><a id="Three">Sprint Three</a></h2>
+<h3>Rough program plan for sprint three:</h3>
+<img src="assets/img/sprint3plan.jpg" width="30%" alt="Image of program plan">
+<h3>Sprint three project board in progress:</h3>
+<img src="assets/img/sprint_3_board.png" width="60%" alt="Image of initial project backlog at sprint three">
+<h3>Sprint three testing:</h3>
+<img src="assets/img/sprint3test1.png" width="50%" alt="Image of test 1">
+<p style="padding-top: 10px;">From the image above, it shows how my function works correctly. The price adds up to the
+correct one, and a separate list is made, with the users order so I can easily access it or print the order in a future
+function, if the user wished to see it. I have made it so the pizza name and price from my list of pizza types is
+transferred onto their order, so it remains the same name throughout my code. Pizzas can easily be put on the
+users menu at any point from the main menu. It is also inclusive to those with a gluten allergy as GF bases are made
+available.</p>
+<img src="assets/img/sprint3test2.png" width="50%" alt="Image of test 2">
+<img src="assets/img/sprint3test3.png" width="50%" alt="Image of test 3">
+<p style="padding-top: 10px;">From both of these tests, it is clear that this sprint is not without faults. There are
+many times in this function where a user has to enter input and there are no restrictions on it. In the first picture,
+I have shown how the program crashes with an error message, this occurs if the user accidentally enters an index number
+that is not included in the list of pizzas. This is not a good design currently as I definitely need to be aware that
+users may make mistakes and the program should not crash because of this. In a future sprint, I hope to make validation
+so this error will not occur. In the second image, it shows how there is no limit on the amount of pizzas a user can
+order which is unrealistic so I aim to validate a limit. It also shows how the user could enter anything for the base
+(because it is a string), so I will also need to validate that so there are only two possible inputs (plain or GF) that
+will be placed in the order list. </p>
+<h3><u>Sprint review</u></h3>
+<p>This sprint has been successful, without any unexpected issues. I thought the best way to go about this sprint was to
+have the users order go into a separate list, taking values from my pizza types list into their order, with some
+additional information. The user can easily go back and re-add a different type of pizza, though another issue that I
+have noticed is that if the user wanted to add another pizza of the same type, then that would create a new set of
+values, over just changing the amount in the list, this will also need validation. There are many aspects that require
+validation in a future sprint to avoid any mistakes or incorrect input recorded, which I mentioned in the testing. In
+the next sprint, I aim to create a function that gives the user the ability to remove pizzas from their order.</p>
+
+
 			
 			</div>
 			<div class="footer">

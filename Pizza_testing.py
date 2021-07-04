@@ -1,17 +1,21 @@
+# getting an integer from the user
 def get_integer(m):
     user_input = int(input(m))
     return user_input
 
+# getting a string from the user
 def get_string(m):
     user_input = input(m)
     return user_input
 
-def pizza_menu(l):
-    for x in l:
+# printing the format for the pizza menu
+def pizza_menu(L):
+    for x in L:
         output = "{:<25} -- ${}".format(x[0], x[1])
         print(output)
     return None
 
+# asking user if they want delivery or pickup
 def delivery_pickup(D):
     user_input = get_string("Would you like pick-up or delivery? ")
     D['Type'] = user_input
@@ -25,6 +29,25 @@ def delivery_pickup(D):
         print("Your cost is now ${}".format(D['Cost']))
     return D
 
+def add_to_order(L, O, D):
+    run = True
+    while run is True:
+        pizza = get_integer("Please enter the index number of the pizza you'd like to order: ")
+        quantity = get_integer("Please enter the number of these pizzas that you would like: ")
+        base = get_string("Would you like a plain or GF base for an additional $1? ")
+        if base == "GF":
+            D["Cost"] += 1
+        addition = [L[pizza][0], quantity, base]
+        D["Cost"] += L[pizza][1]*quantity
+        print("Your cost is now ${}".format(D['Cost']))
+        O.append(addition)
+        add = get_string("Would you like to order anything else? Enter 'y' to continue, or anything else to quit. ")
+        if add == "y":
+            continue
+        else:
+            return L, O, D
+            run = False
+
 def main():
     customer_info = {}
     customer_info['Cost'] = 0
@@ -37,12 +60,14 @@ def main():
     ]
     menu_list = [
         ["P", "Pizza types"],
+        ["A", "Add to order"],
         ["Q", "Quit"]
     ]
 
-    delivery_pickup(customer_info)
-#    print(customer_info)
+    order = []
 
+#    delivery_pickup(customer_info)
+#    print(customer_info)
     run_program = True
     while run_program:
         for x in menu_list:
@@ -51,6 +76,9 @@ def main():
         user_choice = get_string("Please select an option: ")
         if user_choice == "P":
             pizza_menu(pizza_types)
+        if user_choice == "A":
+            add_to_order(pizza_types, order, customer_info)
+            print(order)
         if user_choice == "Q":
             run_program = False
 
