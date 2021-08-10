@@ -31,6 +31,7 @@
 					<li><a href="#One">Sprint One</a></li>
 					<li><a href="#Two">Sprint Two</a></li>
 					<li><a href="#Three">Sprint Three</a></li>
+					<li><a href="#Four">Sprint Four</a></li>
 				</ul>
 			</div>
 			<div class="content">
@@ -49,6 +50,7 @@
 <h2>Initial project backlog</h2>
 <img src="assets/img/initialprojectbacklog.png" width="100%" alt="Image of initial project backlog">
 
+
 <h2><a id="One">Sprint One</a></h2>
 <h3>Rough program plan for sprint one:</h3>
 <img src="assets/img/sprint1plan.jpg" width="30%" alt="Image of program plan">
@@ -63,9 +65,10 @@
 <h3 style="padding: 0px;"><u>Sprint review</u></h3>
 <p>I believe that sprint one worked successfully and accordingly. I now have a basic menu that will run the functions
 available to the user when they select what option they would like to run. I also have a basic list of pizza types, that
-in future versions, the user will be able to choose the types they would like to order. For the next sprint, I would like
+in future sprints, the user will be able to choose the types they would like to order. For the next sprint, I would like
 to include a function that allows the user to choose whether they are going to have their order ready for pick-up or for
 delivery. If this works successfully, I will then expand the program further.</p>
+
 
 <h2><a id="Two">Sprint Two</a></h2>
 <h3>Rough program plan for sprint two:</h3>
@@ -79,7 +82,7 @@ delivery. If this works successfully, I will then expand the program further.</p
 first image, I also printed out the dictionary that includes all of the users information to check if the information the
 user entered, has been inserted into the dictionary in the main function (which it has). The user is also correctly asked
 information that would be needed, according to their choice of either "Pick-up" or "Delivery". My styling has printed out
-well and I can now pick and choose information that I would like to use in future versions from the main dictionary.</p>
+well and I can now pick and choose information that I would like to use in future sprints from the main dictionary.</p>
 <img src="assets/img/sprint2test3.png" width="50%" alt="Image of test 3">
 <p style="padding-top: 10px;">I have not yet included validation, which as shown in the image above, is needed. The user
 is able to crash the program if they entered the wrong input or have a name with special characters and no there is no
@@ -94,6 +97,7 @@ done it a different way, then my code could get cluttered or I would need to cal
 that is all related. I can also easily comment out this function when I am testing and add it later to be more efficient
 with my time. I think the function works well but will definitely need validation in a future sprint so my program can
 handle unexpected input, I have mentioned this in my tests for this sprint. </p>
+
 
 <h2><a id="Three">Sprint Three</a></h2>
 <h3>Rough program plan for sprint three:</h3>
@@ -126,13 +130,53 @@ additional information. The user can easily go back and re-add a different type 
 have noticed is that if the user wanted to add another pizza of the same type, then that would create a new set of
 values, over just changing the amount in the list, this will also need validation. There are many aspects that require
 validation in a future sprint to avoid any mistakes or incorrect input recorded, which I mentioned in the testing. In
-the next sprint, I aim to create a function that gives the user the ability to remove pizzas from their order.</p>
+the next sprint, I aim to create a function that gives the user the ability to edit their ordered pizzas.</p>
+
+
+<h2><a id="Four">Sprint Four</a></h2>
+<h3>Rough program plan for sprint four:</h3>
+<img src="assets/img/sprint4plan.jpg" width="30%" alt="Image of program plan">
+<h3>Sprint four project board in progress:</h3>
+<img src="assets/img/sprint_4_board.png" width="60%" alt="Image of initial project backlog at sprint four">
+<h3>Sprint four testing:</h3>
+<img src="assets/img/sprint4test1.png" width="50%" alt="Image of test 1">
+<p style="padding-top: 10px;">In my sprint 4 testing, you can see that my editing function has works as expected. In
+this image of my first test, both aspects of editing a users order work well. A pizza is successfully removed from the
+list when a user enters '0'. This is important because a user may want to remove a whole type of pizza from their order,
+rather than just altering the amount on there, as mistakes are always made and should be considered. Applying this same
+reasoning, a user may also want to change the amount of pizzas they have of a type, so this is also an important
+piece of code.</p>
+<img src="assets/img/sprint4test2.png" width="50%" alt="Image of test 2">
+<img src="assets/img/sprint4test3.png" width="50%" alt="Image of test 3">
+<p style="padding-top: 10px;">In these following two tests, it demonstrates how there is still many faults in the
+construction of my code. As seen in my previous sprints, these errors are caused by a lack of validation throughout my
+design, which I hope to improve in the future. There is currently no limit on the number of pizzas that the user can
+order, which is unrealistic. A large fault is also that the program quits with an error message, if the user enters a
+letter or special character, when the input is for an integer. Like the previous sprints, there is also an error
+message if the user enters a value for the index numbers, that is not on the list. Through a function that I created to
+print out the user's order, the order prints out correctly and with index numbers to be more clear to the user. </p>
+<h3><u>Sprint review</u></h3>
+<p>In this sprint, my editing function worked accordingly, I also made a few minor adjustments throughout my code to
+better it. The first adjustment I made was to display the index numbers beside the pizza types in the menu and on their
+order, so the index numbers are more clear to the user (which can be seen in my test). I have also removed the GF option
+to my code, as I realised that it was unnecessary for the point at which my program was at, in a future I may wish to
+add the addition in, once it has reached a more developed stage. This is because it made my testing difficult and
+tedious, when building more important elements of my program. <br> Another adjustment I made was in how the cost works.
+I created a separate function to multiply and add together the cost of the pizzas (rough code plan in sprint four plan).
+This means that I can update the cost externally, so if the user wishes to change their order, the cost will correctly
+be updated. I have added extras in my main dictionary, so the pizzas total can be added externally, and other costs,
+like the extra cost that is added if the user wants to have a delivery order. In a future sprint, where I will create a
+function to print out the users order, I will display their total cost of the pizzas, and the total cost of their extra
+costs, and then add them together for their final cost. <br> My main focus in this sprint was to build the editing order
+function, this gives the user the ability to change the amount of pizzas they ordered, or remove a particular type of
+pizza from their order. This works successfully, and the main errors of the program is that there is no validation for
+user entries, so many errors or problems can still occur, which is something I aim to change in a future sprint.</p>
 
 
 			
 			</div>
 			<div class="footer">
-				&copy; Copyright 2015
+				&copy; Copyright 2021
 			</div>
 		</div>
 	</body>
