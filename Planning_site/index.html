@@ -33,6 +33,8 @@
 					<li><a href="#Three">Sprint Three</a></li>
 					<li><a href="#Four">Sprint Four</a></li>
 					<li><a href="#Five">Sprint Five</a></li>
+					<li><a href="#Six">Sprint Six</a></li>
+					<li><a href="#RI">Relevant implications</a></li>
 				</ul>
 			</div>
 			<div class="content">
@@ -53,6 +55,9 @@
 
 
 <h2><a id="One">Sprint One</a></h2>
+<p>My aim for this first sprint is to build the main function, which will run my other functions that I build throughout
+this development process. For this sprint, I should only have two options in the menu, one to quit, and another to
+print out the pizzas available (I will also be building this function).</p>
 <h3>Rough program plan for sprint one:</h3>
 <img src="assets/img/sprint1plan.jpg" width="30%" alt="Image of program plan">
 <h3>Sprint one project board in progress:</h3>
@@ -72,6 +77,9 @@ delivery. If this works successfully, I will then expand the program further.</p
 
 
 <h2><a id="Two">Sprint Two</a></h2>
+<p>For sprint two, my aim is to create a dictionary that will hold all of the users information, located in the main
+function. I also aim to create a function that will ask for the users information, and the range of information needed
+based on whether the user chooses "delivery" or "pick-up".</p>
 <h3>Rough program plan for sprint two:</h3>
 <img src="assets/img/sprint2plan.jpg" width="30%" alt="Image of program plan">
 <h3>Sprint two project board in progress:</h3>
@@ -83,7 +91,10 @@ delivery. If this works successfully, I will then expand the program further.</p
 first image, I also printed out the dictionary that includes all of the users information to check if the information the
 user entered, has been inserted into the dictionary in the main function (which it has). The user is also correctly asked
 information that would be needed, according to their choice of either "Pick-up" or "Delivery". My styling has printed out
-well and I can now pick and choose information that I would like to use in future sprints from the main dictionary.</p>
+well and I can now pick and choose information that I would like to use in future sprints from the main dictionary. I
+am trialling this method for the cost value in my program, for this current sprint I believe that it works successfully,
+but in future sprints I may wish to use an alternative and more advanced process, where extra costs like the cost of
+delivery are separate from the main cost.</p>
 <img src="assets/img/sprint2test3.png" width="50%" alt="Image of test 3">
 <p style="padding-top: 10px;">I have not yet included validation, which as shown in the image above, is needed. The user
 is able to crash the program if they entered the wrong input or have a name with special characters and no there is no
@@ -101,6 +112,9 @@ handle unexpected input, I have mentioned this in my tests for this sprint. </p>
 
 
 <h2><a id="Three">Sprint Three</a></h2>
+<p>My aim for sprint three is to create a function that allows the user to add a pizza, from the list of pizzas that is
+given to them, and then adding this information to a multidimensional list dedicated towards containing the users order.
+This list will be located in the main function.</p>
 <h3>Rough program plan for sprint three:</h3>
 <img src="assets/img/sprint3plan.jpg" width="30%" alt="Image of program plan">
 <h3>Sprint three project board in progress:</h3>
@@ -135,6 +149,10 @@ the next sprint, I aim to create a function that gives the user the ability to e
 
 
 <h2><a id="Four">Sprint Four</a></h2>
+<p>For my sprint for, I aim to create a function that will allow the user to edit the order that they would have created
+using the function I made in my previous sprint. This should give the users the ability to change the amount of pizzas
+that they would like, or remove a particular type. I would also like to create a function to print out the users order
+and improve the current way I have have set up for calculating the cost.</p>
 <h3>Rough program plan for sprint four:</h3>
 <img src="assets/img/sprint4plan.jpg" width="30%" alt="Image of program plan">
 <h3>Sprint four project board in progress:</h3>
@@ -146,16 +164,23 @@ this image of my first test, both aspects of editing a users order work well. A 
 list when a user enters '0'. This is important because a user may want to remove a whole type of pizza from their order,
 rather than just altering the amount on there, as mistakes are always made and should be considered. Applying this same
 reasoning, a user may also want to change the amount of pizzas they have of a type, so this is also an important
-piece of code.</p>
+piece of code. As you can see in this test, the cost function that I introduced is also working as planned, and
+functions better with the design of this program.</p>
 <img src="assets/img/sprint4test2.png" width="50%" alt="Image of test 2">
 <img src="assets/img/sprint4test3.png" width="50%" alt="Image of test 3">
-<p style="padding-top: 10px;">In these following two tests, it demonstrates how there is still many faults in the
+<img src="assets/img/sprint4test4.png" width="50%" alt="Image of test 4">
+<p style="padding-top: 10px;">In these following three tests, it demonstrates how there is still many faults in the
 construction of my code. As seen in my previous sprints, these errors are caused by a lack of validation throughout my
 design, which I hope to improve in the future. There is currently no limit on the number of pizzas that the user can
 order, which is unrealistic. A large fault is also that the program quits with an error message, if the user enters a
 letter or special character, when the input is for an integer. Like the previous sprints, there is also an error
 message if the user enters a value for the index numbers, that is not on the list. Through a function that I created to
-print out the user's order, the order prints out correctly and with index numbers to be more clear to the user. </p>
+print out the user's order, the order prints out correctly and with index numbers to be more clear to the user. In the
+last image, I noticed there is an error in how the pizzas add to the user's order within the previous, 'add_to_order'
+function. This was only noticed in this sprint, as previously I did not print out the actual order in function in the
+last sprint. The error occurs if the user enters the same type of pizza in the add_to_order function, more than once,
+so the same type appears in the order, but with different quantities (according to the input). These errors I aim to
+fix in future sprints. </p>
 <h3><u>Sprint review</u></h3>
 <p>In this sprint, my editing function worked accordingly, I also made a few minor adjustments throughout my code to
 better it. The first adjustment I made was to display the index numbers beside the pizza types in the menu and on their
@@ -166,25 +191,255 @@ tedious, when building more important elements of my program. <br> Another adjus
 I created a separate function to multiply and add together the cost of the pizzas (rough code plan in sprint four plan).
 This means that I can update the cost externally, so if the user wishes to change their order, the cost will correctly
 be updated. I have added extras in my main dictionary, so the pizzas total can be added externally, and other costs,
-like the extra cost that is added if the user wants to have a delivery order. In a future sprint, where I will create a
-function to print out the users order, I will display their total cost of the pizzas, and the total cost of their extra
-costs, and then add them together for their final cost. <br> My main focus in this sprint was to build the editing order
-function, this gives the user the ability to change the amount of pizzas they ordered, or remove a particular type of
-pizza from their order. This works successfully, and the main errors of the program is that there is no validation for
-user entries, so many errors or problems can still occur, which is something I aim to change in a future sprint.</p>
+like the extra cost that is added if the user wants to have a delivery order. I believe that by using this technique to
+deal with the cost value in this function is better suited than the method I used in my previous sprints. This is
+because, as shown in my testing, the cost is calculated and presented in more clear and developed way. It works
+efficiently with the introduction of the 'print_customer_order' function and 'edit_order' function, and there should be
+no issues when implementing future functions to my program, unlike the previous method. <br> In a future sprint, where I
+will create a function to print out the users order, I will display their total cost of the pizzas, and the total cost
+of their extra costs, and then add them together for their final cost. My main focus in this sprint was to build the
+editing order function, this gives the user the ability to change the amount of pizzas they ordered, or remove a
+particular type of pizza from their order. This works successfully, and the main errors of the program is that there
+is no validation for user entries, so many errors or problems can still occur, which is something I aim to change in a
+future sprint.</p>
 
 <h2><a id="Five">Sprint Five</a></h2>
+<p>My aim for sprint five is to create a function that will allow the users to review their order, that will print out
+what they currently have, in a format similar to a receipt. I would also like to have a confirm order, so the user can
+confirm and exit the program. Along with this, throughout some of my previous function, I would like to include some
+code that will ensure the user enters information in the correct order.</p>
 <h3>Rough program plan for sprint five:</h3>
 <img src="assets/img/sprint5plan.jpg" width="30%" alt="Image of program plan">
 <h3>Sprint five project board in progress:</h3>
-<img src="assets/img/sprint_5_board.png" width="60%" alt="Image of initial project backlog at sprint four">
+<img src="assets/img/sprint_5_board.png" width="60%" alt="Image of initial project backlog at sprint five">
 <h3>Sprint five testing:</h3>
 <img src="assets/img/sprint5test1.png" width="50%" alt="Image of test 1">
-
+<img src="assets/img/sprint5test2.png" width="50%" alt="Image of test 2">
+<img src="assets/img/sprint5test8.png" width="50%" alt="Image of test 3">
+<p style="padding-top: 10px;">In the first image above, it shows how my review sprint function works correctly, printing
+the order out in a presentable way to the user how I intended it to be. The second and third image demonstrates how my
+confirm order function also works correctly, the customer's order and information is presented in a clean and
+readable way, so the customer can clearly see what they have entered, if in any way things need to be changed. The user
+is then given three options to choose, so they could either confirm their order, exit to the main menu or select 'N' to
+be given the option to return to the main menu or cancel their order. From this, when the user enters the correct input
+(in the next sprint I will validate entries in case incorrect input is given), the two main functions that I created in
+this sprint are working successfully. This now means that the user will be able to clearly view their order progress,
+after the information is given, so they can easily recognise any errors they may have made. The confirm function
+clearly shows the user what they have entered once again, so they can confidently confirm what they have ordered,
+while also being provided with options to return to the main menu, in case they are not ready yet.</p>
+<img src="assets/img/sprint5test3.png" width="50%" alt="Image of test 4">
+<img src="assets/img/sprint5test4.png" width="50%" alt="Image of test 5">
+<img src="assets/img/sprint5test5.png" width="50%" alt="Image of test 6">
+<img src="assets/img/sprint5test6.png" width="50%" alt="Image of test 7">
+<p style="padding-top: 10px;">In this sprint, I also decided to add some code throughout my review, confirm and edit functions. This is
+because these functions rely on information that is gathered about the user or their order, from other functions. This
+is so these functions will not crash if the user had not already entered the information. While there are other
+ways that my code can crash, due to the fact that user entries have not been validated, hopefully this will be fixed in
+my next sprint. As you can see in the images above, if the user was to select those three functions before entering
+information required and gathered in other functions in the menu, a helpful and clear error message is given to the
+user. This will help the user to understand the error they made, and how they can fix it.</p>
+<img src="assets/img/sprint5test7.png" width="50%" alt="Image of test 8">
+<p style="padding-top: 10px;">In this sprint I also revisited the function that I created in sprint two, adding in the small function I
+created for the confirm order function, which is to print out the customer details in a presentable way to the user.
+I wanted to improve this function by including this, so the user is aware of their system status throughout the
+program. </p>
 <h3><u>Sprint review</u></h3>
-<p></p>
+<p>For sprint five, my main focus was to create the review and confirm order functions. These mostly required the
+styling of my order list and dictionary with the user's personal information. This was important to do so the user can
+easily understand the information presented, to avoid misinterpreted information, which could cause the user to make
+undesired errors. As my program is not yet fully validated, there are still many areas were errors can occur. Once my
+program is fully validated, if information is misinterpreted errors beyond the programs control may occur, like if the
+user enters the wrong pizza and is not aware of it. If the information presented in the review and confirm is clear and
+readable, the user can recognise a mistake and easily change it (as after the information is presented to them, the
+user is able to return to the main menu to adjust their order). <br> As shown throughout my testing, both of these
+functions work accordingly. The information shown in both the functions is shown to the user in a presentable way. In
+the process of building the confirm order function, I also made some minor adjustments in my code, so that it works in a
+better and more efficient way. I added in one small function, 'init', which creates the main customer information
+dictionary outside of the main menu, setting the values for 'cost' and 'extras' to zero. This is so the after
+confirmation of the user's order, the dictionary can easily be cleared so if they wish to make another order, then the
+user can do so without any issue. I believe this is a better way of setting up my dictionary for customer details than
+the technique I trialled previously, where I set these values in the main function, as now it can easily be cleared or
+updated, with the same or different values. <br> Finally, I also noticed that with these two new functions, along with
+function I created in the previous sprint, that as all of them require information from fields filled throughout other
+the edit function in the menu, an error will occur if the user has not filled them. To fix this issue, throughout these
+functions, I built a similar piece of code that will check if the fields required have been filled, and if they have
+not, a helpful error message will appear to advise the user, avoiding a crash in my program. This worked successfully,
+as tested above, so the user is aided in entering the correct input. In the next sprint, I aim to finally add in
+validation for general string inputs and integer inputs, while also including some more focused restrictions towards
+validating a phone number and name input. I also hope to fix the error I noticed in my previous sprint, so the same
+type of pizza cannot appear more than once in the order.</p>
 
+<h2><a id="Six">Sprint Six</a></h2>
+<p>My aim for sprint six is to add three main validation functions, 'get_integer', 'get_string' and 'single_string'.
+I want to validate user entries using these main functions, to hopefully eliminate unwanted errors in my program to
+validate when a user enters an integer, string and single character string. I also hope to create a 'phone_number'
+function, dedicated to the validation when the user is asked for a phone number, along with slightly validating the
+entry of the users name. I also aim to fix the repeating pizza type error I addressed earlier on.</p>
+<h3>Rough program plan for sprint six:</h3>
+<img src="assets/img/sprint6plan.jpeg" width="30%" alt="Image of program plan 1">
+<img src="assets/img/sprint6plan2.jpeg" width="30%" alt="Image of program plan 2">
+<img src="assets/img/sprint6plan3.jpeg" width="30%" alt="Image of program plan 3">
+<img src="assets/img/sprint6plan4.jpeg" width="30%" alt="Image of program plan 4">
+<h3>Sprint six project board in progress:</h3>
+<img src="assets/img/sprint_6_board.png" width="60%" alt="Image of initial project backlog at sprint six">
+<h3>Sprint six testing:</h3>
+<img src="assets/img/sprint6test1.png" width="50%" alt="Image of test 1">
+<img src="assets/img/sprint6test2.png" width="50%" alt="Image of test 2">
+<img src="assets/img/sprint6test3.png" width="50%" alt="Image of test 3">
+<p style="padding-top: 10px;">The images above shows the validation that has been added to when a user enters an integer. In my
+previous tests of my program, I recognised that I needed a function to validate integer entries, as without it, my
+program would crash or an unwanted value would pass. To fix this error, as shown above, the 'get_integer' function
+validates an integer input by taking the specific minimum for the message and ensuring that the user's input is
+greater than or equal to the set minimum. The same applies for the optional list maximum value, that I have designed in
+a way so it is not a required value, as there may be a message that does not require a maximum value in the future.
+With this, the function checks to see if the user's input is less than or equal to the maximum, if there is a maximum
+value. The user then receives a specific error message, according to the error that they have made and is also unique to
+whether it has a maximum value or not. These error messages are clear and informative to the user, so they can
+understand and fix the error. Everything in this test of this function is working successfully and as imagined.</p>
+<img src="assets/img/sprint6test4.png" width="50%" alt="Image of test 4">
+<img src="assets/img/sprint6test5.png" width="50%" alt="Image of test 5">
+<p style="padding-top: 10px;">In the two images above, the validation in the 'get_string' function is demonstrated for string inputs.
+In my previous tests of my program, I also recognised that I needed a function to validate string entries, as without
+it, unwanted input could pass, hence the reason I created 'get_string'. In the first image, it shows how the user's
+name has been validated, so only letters in the alphabet, a hyphen and space can be used when the user is entering
+their name. This aspect is not apart of the 'get_string' function, as I added these restrictions directly into my
+'delivery_pick-up' function. This is because not all string inputs would require these limitations, for some may require
+numbers, letters and/or special characters. If the user enters something
+other than this, a helpful error message is given to the user that is clear and informative to aid in helping the user
+improve their error. For the name, the input will first loop through the 'get_string' function, which will ensure that
+the input is greater than or equal to the minimum and less than or equal to the optional list maximum value if there is
+one (for the same reason as get_integer). get_string also makes the input have an uppercase first letter, with following
+lowercase letters from .title(). This is because in this program, when get_string is required, it is for the input of a
+proper noun, which requires this way of input. Examples of this function correctly and accordingly working is shown in
+both images above. </p>
+<img src="assets/img/sprint6test6.png" width="50%" alt="Image of test 6">
+<img src="assets/img/sprint6test7.png" width="50%" alt="Image of test 7">
+<img src="assets/img/sprint6test8.png" width="50%" alt="Image of test 8">
+<p style="padding-top: 10px;">The images above are examples of when the function, 'single_string' is used throughout my program. This
+function is being used to validate single string entries, and as shown above, is working as planned. In the first
+image, it is shown how single_string can only accept a valid single-letter which is unique to the message. In this case,
+an optional string for an error message has been used. While in most cases the input requires is very similar, so the
+same error message can be used, the unique error message is used as there are many possible entries in the menu. I have
+included this optional value to pass into the function for in the scenario that a different error message is required.
+As all of the input's that are required are all capital letters (which I edited as I realised that that was the most
+efficient way to do it), so if the input is entered lower-case, then using .upper(), the input becomes upper-case to
+match the required input, which is also seen in the testing images above. The user gets a specific and helpful error
+message, according to their situation, and if a different one is required then it can be passed in. This will mean that
+the user can easily interpret what is required for a correct input. </p>
+<img src="assets/img/sprint6test9.png" width="50%" alt="Image of test 9">
+<img src="assets/img/sprint6test10.png" width="50%" alt="Image of test 10">
+<img src="assets/img/sprint6test11.png" width="50%" alt="Image of test 11">
+<p style="padding-top: 10px;">In these images above, the validation from the 'phone_number' function is shown to validate the user's
+entry for a New Zealand telephone. The function erases any excess characters other than numbers for getting the phone
+number. This is because some people may enter their number like: '021-23...' or '04 28...', so by remove them using a
+regex, the regex can then match numbers with numbers, without have to deal with extra items. In the first test above, it
+demonstrates how this function is working correctly. In New Zealand, there are also many different types of phone
+numbers, each with different maximum and minimum lengths. As seen in the testing above, correct inputs of a Local
+Number, Mobile Number and National Number for New Zealand have passed, as they contain the correct beginning digits
+with the unique and minimum values. When the user's input does not match a New Zealand phone number, an error message
+appears to avoid incorrect input being passed. After the user has entered a correct input, according to the type of
+New Zealand number the user entered, the minus signs separate the number in the correct format, in a readable and
+presentable way to the user, allowing them to easily recognise if they entered their correct number or not, avoiding
+errors. In this function, everything worked as planned, as seen in the tests above.</p>
+<img src="assets/img/sprint6test12.png" width="50%" alt="Image of test 12">
+<p style="padding-top: 10px;">Finally, in this last image above it demonstrates how the error where two pizzas of the same type would
+appear in the user's order, if the user wanted to add more of that type of pizza to their order. By including a small
+piece of code into my 'add_to_order' function, I managed to fix this error and further improve the effectiveness of my
+program. This was done by checking the users order to see if the pizza type from the pizza list was already in the
+user's order.</p>
+<h3><u>Sprint review</u></h3>
+<p>In this sprint, I included four new functions towards validating user entries which were successfully built. There
+were also a few minor adjustments to improve this validation, allowing for my program to be error-proof and able to
+handle the user's entries if they are incorrect. My 'get_integer' allows for an individual message to have different
+minimum values and an optional list maximum value. This means my program is able to handle future scenarios for
+integer inputs, where some of which may not require a maximum value. The same applies for my other validation
+function, 'get_string', where there is also an optional list maximum value for future user string entries that may or
+may not require a maximum value. Both get_integer and get_string have provided my program with basic string and integer
+validations, that should be able to be used on most typical string or integer user inputs. These can also be paired with
+a more detailed validation (similar to what I did for validating the name entry), that may require minimum or maximum
+values along with further restrictions. <br> My other main validation function that is used many times throughout my
+program is 'single_string', which is designed to only accept strings that are one character long. This function allows
+many different correct inputs, and with alter with each message. This means that it should be able to be applied to
+most scenarios where a single-character string is required in the possible future of this program. With this, I made a
+slight adjustment to the main menu options, and decided to change it into a dictionary over a multi-dimensional list.
+This made the implementation of this function easier for that specific message, and as a menu will not require more than
+two fields, it improves the functionality of this program, currently and for future. By including an optional list error
+message, this allows for different situations to occur, other than the typical error message that is printed for shared
+common errors a user may make in my program when entering a single-character string. <br> The last validation function
+that I introduced in this sprint is the 'phone_number' function, which has been designed to take the input from the user
+of a New Zealand phone number. This has been done in a flexible way, that allows all the possibilities of a number in
+New Zealand, to ensure that there is no issue with the number that the user has entered. It is easy to change the range
+that the particular number (whether Local, National or Mobile), if for some reason they change in the near future. It is
+also printed in a clear, familiar and readable way for the user. <br> As well as this, I also fixed the issue that
+occurred with the same pizza type appearing separately in the order. Overall, this validation sprint has been
+successful at eliminating the errors that could have occurred in the program beforehand, allowing the user to make a
+mistake while entering input, which is something all users have a possibility of doing.</p>
 
+<h2><a id="RI">Relevant implications</a></h2>
+<h3><u>Sustainability and future proofing</u></h3>
+<p style="padding-top: 10px;">Throughout my program, I have addressed the relevant implication of sustainability and future proofing.
+This relevant implication is important to consider, as a program should be adaptable and have the ability to expand with
+new applications and frequent updates. I have addressed this implication by using a function structure where if there
+are new additions to the program that want to be added, then it can easily be added by creating a new function, and then
+running it through the main function to run the program. A new function could be considered a new sprint, so it is
+easy to plan and execute expansions for my program. Throughout my functions, I have also created room for improvement or
+future changes, so if the functions need to be altered or particular values throughout my program need to be added, it
+is easy and able to be altered. Some examples of this relevant implication being used in my program are: by having
+general 'get_integer' and 'get_string' functions that are applicable to most forms of string and integer inputs, meaning
+that a future sprint, if a function requires a general string or integer input, then these functions can be easily
+incorporated into the function. By including optional list values in my main validation functions like maximums and
+optional error messages, then future input can use the main functions, and have the flexibility to either include these
+optional lists or not. I have small functions for the headers used to style my program, so the information presented to
+the user is clear and understandable, these are so I can easily change the length or design, without having to
+individually change each line break. By including the 'init' function, the information in my main dictionary for
+customer information that it originates with can easily shift, without altering the main function. The same idea
+applies with my small functions included that are used to print out the order and pizza types, so these can easily be
+altered and called throughout functions, without having to individually change it's information. While there are only
+two values in my multidimensional list for my pizza types (name and cost), where it may appear easier to have a
+dictionary, by making it a list, there is room for additional information to be added in the list for my pizzas in the
+future, such and ingredients or dietary information for the user. Throughout my code, I have also used doc strings and
+comments, so future programmers or myself can easily understand my code, so it can be used by exterior programmers and
+developed upon and remain a useful program. </p>
+<h3><u>Usability</u></h3>
+<p style="padding-top: 10px;">The relevant implication, usability, is also very important to focus on while building a program. It
+focuses on the idea that a digital product is able to be understood and properly used for it's desired purpose. That
+errors can be recognised and recovered from throughout the process, that all information is displayed in a clear way,
+so the proper requirements of the program is executed in the most efficient way. In the program that I have designed, it
+is focused around gathering information from the user. Because of this, the program must be easy to understand for a
+user, so it is easy to use and navigate through the program. The program must also be able to recognise and recover
+from errors that a user may make, and then clearly instruct the user on how to enter the desired input. I have been
+actively considering how easy the information presented to the user is to understand. I have been doing this to
+address this relevant implication, so the user can easily use this program, as they can understand what input is asked
+of them. I have made this information clear to the user by giving polite, informative prompts to the user when they
+must enter input and throughout my program. I have also made sure to present my information in a presentable way by
+styling certain data. For example, this is used after the user enters their phone number, by using '-' to separate the
+digits in a common and clear format, so it is easy for the user to use. If the user makes an error, then an
+understandable error message is given, making it easier for the user to correctly improve their input, over a message
+such as 'incorrect input'. I have also addressed this relevant implication by using .upper(), .title() and my regex
+which strips things other than integers from the string. This makes the program easier to user as these will
+automatically make the users input into a more understandable input, without the user having to re-enter information
+that is technically the correct input. For example, for single string inputs that require a capital letter, if they
+entered a lower-case version of the correct input then it will be still be counted as the correct input. At the end of
+each function, the user is returned to the main function so the user can easily use most functions multiple times, and
+the menu is easy to use. </p>
+<h3><u>Functionality</u></h3>
+<p style="padding-top: 10px;">The final relevant implication that I have addressed is functionality. Functionality is about having a
+digital product that operates correctly, without any errors or crashes. This is also a very important relevant
+implication to consider while building a program, as if there are many errors and crashes throughout a program, then
+the desired outcome cannot be reached. A functional program should perform with the expectation of errors and
+unexpected inputs/outcomes, and have the ability to either prevent or recover from these occurring. Especially when
+focusing around the input of a user, as mine does, because users cannot be relied upon to not make faults. If a system
+crashes or does not run with ease, then it's functionality is poor. Ways that I have carefully considered to address
+this relevant implication is by designing validation. By creating three main validation functions, I have ensured that
+my system is unable to crash, and will eventually obtain the required input, even if the user makes an error. At each
+point throughout my code where a users entry is required, a validation is provided according to the type of input
+required, where these validations are expected to catch any type of input, and will provide a helpful message to the
+user to help correct their error. Across my agile process, I have also made sure to heavily test each sprint, so that I
+can recognise and built functions for errors that can occur. Before including new functions and code into my main
+program, I build and developed separately, where I tested and corrected errors that occurred. Along with this, I have
+also designed my code in a platform that highlights/underlines errors that are recognised, along with giving feedback on
+the type of error that has occurred within the code itself, which helped aid in ensuring that my program properly and
+successfully addresses this relevant implication.</p>
 			
 			</div>
 			<div class="footer">
