@@ -1,10 +1,10 @@
 import re
 """
  Main pizza program for ordering pizzas, with functions that allow a user to:
- add a pizza to their order, 
- edit their order, 
- enter personal information for pick-up or delivery, 
- review and 
+ add a pizza to their order,
+ edit their order,
+ enter personal information for pick-up or delivery,
+ review and
  confirm their order.
  Main program is ran in the main function.
 """
@@ -12,8 +12,10 @@ import re
 
 def get_integer(m, minimum, *maximum):
     """
-        Transferable function for an integer input with a message, minimum value and optional list for maximum value.
-        Checks that the user's input is greater than the minimum and smaller than the optional maximum.
+        Transferable function for an integer input with a message, minimum
+        value and optional list for maximum value.
+        Checks that the user's input is greater than the minimum and smaller
+        than the optional maximum.
 
         :param m: string message
         :param minimum: integer
@@ -32,16 +34,18 @@ def get_integer(m, minimum, *maximum):
                 print("-")
                 print("Please enter an input of {}".format(minimum))
                 print("-")
-            # if the user has entered an integer less than the minimum or an integer greater than the maximum
+            # if the user has entered an integer less than the minimum
+            # or if an integer greater than the maximum
             elif len(maximum) > 0 and (minimum > user_input or user_input > maximum[0]):
                 print("-")
-                print("Please enter an input greater than or equal to {} and less than or equal to {}".format
-                      (minimum, maximum[0]))
+                print("Please enter an input greater than or equal to {} and "
+                      "less than or equal to {}".format(minimum, maximum[0]))
                 print("-")
             # if the user has entered an integer less than the minimum
             elif minimum > user_input:
                 print("-")
-                print("Please enter an input greater than or equal to {}".format(minimum))
+                print("Please enter an input greater than or equal to"
+                      " {}".format(minimum))
                 print("-")
             # if all good, ends the loop
             else:
@@ -57,8 +61,10 @@ def get_integer(m, minimum, *maximum):
 
 def get_string(m, minimum, *maximum):
     """
-        Transferable function for a string input with a message, minimum value and optional list for maximum value.
-        Checks that the user's input is greater than the min, smaller than the optional max and makes input titled.
+        Transferable function for a string input with a message, minimum value
+        and optional list for maximum value.
+        Checks that the user's input is greater than the min, smaller than the
+        optional max and makes input titled.
 
         :param m: string message
         :param minimum: integer
@@ -75,11 +81,12 @@ def get_string(m, minimum, *maximum):
         # if the user has entered an input:
         if user_input:
             user_input = user_input.title()
-            # if the user has entered a string less than the minimum or greater than the maximum
+            # if the user has entered a string less than the minimum or greater
+            # than the maximum
             if len(maximum) > 0 and (minimum > len(user_input) or len(user_input) > maximum[0]):
                 print("-")
-                print("Please enter an input greater than or equal to {} and less than or equal to {}".format
-                      (minimum, maximum[0]))
+                print("Please enter an input greater than or equal to {} and "
+                      "less than or equal to {}".format(minimum, maximum[0]))
                 print("-")
             # if the users input is less than the minimum
             elif len(user_input) < minimum:
@@ -99,9 +106,10 @@ def get_string(m, minimum, *maximum):
 
 def single_string(m, answers, *error_message):
     """
-        Transferable function for a string input that is one character long, with a correct input and optional list for
-        a particular error message.
-        Checks if the user's input is one character and the correct input, prints out error message if found
+        Transferable function for a string input that is one character long,
+        with a correct input and optional list for a particular error message.
+        Checks if the user's input is one character and the correct input,
+        prints out error message if found
 
         :param m: string message
         :param answers: string
@@ -118,7 +126,8 @@ def single_string(m, answers, *error_message):
         # if user has entered an answer larger than one character
         if len(user_input) > 1 or len(user_input) < 1:
             print("-")
-            print("You have entered an incorrect input, please enter a singular letter")
+            print("You have entered an incorrect input, please enter a "
+                  "singular letter")
             print("-")
         # if user has entered an input and is a correct input
         elif user_input and user_input.upper() in answers:
@@ -132,7 +141,8 @@ def single_string(m, answers, *error_message):
                 print(error_message[0])
                 print("-")
             else:
-                # if there is more than two possible correct inputs, to give a clear error message to the user
+                # if there is more than two possible correct inputs, to give a
+                # clear error message to the user
                 if len(answers) > 2:
                     answer = ', '.join(answers[:-1]) + ' or ' + answers[-1]
                 # if there is only two correct inputs
@@ -146,8 +156,10 @@ def single_string(m, answers, *error_message):
 
 def phone_number(m):
     """
-        Function to get the user's telephone number with validation for the input of a New Zealand number
-        Using https://en.wikipedia.org/wiki/Telephone_numbers_in_New_Zealand as a reference
+        Function to get the user's telephone number with validation for the
+        input of a New Zealand number
+        Using https://en.wikipedia.org/wiki/Telephone_numbers_in_New_Zealand as
+        a reference
 
         :param m: string message
         :return: string input
@@ -173,7 +185,8 @@ def phone_number(m):
             incorrect_input = False
         if incorrect_input:
             print("-")
-            print("Please enter a valid New Zealand phone number as '{}' is not valid".format(result))
+            print("Please enter a valid New Zealand phone number as '{}' is "
+                  "not valid".format(result))
             print("-")
     return return_value
 
@@ -198,7 +211,8 @@ def line_header():
 
 def init():
     """
-        Function to initially set up the main dictionary containing customer information
+        Function to initially set up the main dictionary containing customer
+        information
 
         :return: dictionary
     """
@@ -225,7 +239,8 @@ def pizza_menu(i):
 
 def print_customer_order(o):
     """
-        Function to print the customer's ordered pizzas with indexes from a list
+        Function to print the customer's ordered pizzas with indexes from a
+        list
 
         :param o: list
         :return: none
@@ -269,16 +284,17 @@ def update_cost(d, o):
 
 def delivery_pickup(d):
     """
-        Function that allows the user to select their method of collection and requires information accordingly that is
-        stored in a dictionary
+        Function that allows the user to select their method of collection and
+        requires information accordingly that is stored in a dictionary
 
         :param d: dictionary
         :return: dictionary
     """
     # if the user has already entered the information:
     if 'Type' in d:
-        user_input = single_string("You already have set your information, do you wish to set it again? Y/N ",
-                                   ['Y', 'N'])
+        user_input = single_string("You already have set your information, "
+                                   "do you wish to set it again? "
+                                   "Y/N ", ['Y', 'N'])
         # sending back to main function
         if user_input == "N":
             return d
@@ -293,8 +309,8 @@ def delivery_pickup(d):
     while True:
         line_header()
         # asking for user input
-        user_input = single_string("Would you like pick-up 'P' or delivery 'D' (for additional $3 charge)? ",
-                                   ['P', 'D'])
+        user_input = single_string("Would you like pick-up 'P' or delivery 'D'"
+                                   " (for additional $3 charge)? ", ['P', 'D'])
         line_header()
         d['Type'] = user_input
 
@@ -303,12 +319,14 @@ def delivery_pickup(d):
         while get_name:
             d['Name'] = get_string("What is your name for this order? ", 2, 30)
             # prints out a question if it is not what the regex searched for
-            # regex searches for capital and lower-case letters, hyphens and spaces
+            # regex searches for capital and lower-case letters, hyphens
+            # and spaces
             if re.search('^[A-Za-z- ]+$', d['Name']):
                 get_name = False
             else:
                 print("-")
-                print("Please only enter letters of the alphabet (hyphen included) for your name")
+                print("Please only enter letters of the alphabet (hyphen "
+                      "included) for your name")
                 print("-")
 
         # following information for dictionary required based on their input
@@ -320,7 +338,8 @@ def delivery_pickup(d):
             d['Phone'] = phone_number("What is you phone number? ")
             d['Type'] = "Delivery"
             line_header()
-            print("${} has been added to your total for delivery".format(d['Extras']))
+            print("${} has been added to your total for"
+                  " delivery".format(d['Extras']))
 
         # printing what the user has given
         line_header()
@@ -329,7 +348,8 @@ def delivery_pickup(d):
         line_header()
 
         # if they want to change what they have just entered
-        change = single_string("Would you like to re-enter your customer information? Y/N ", ['Y', 'N'])
+        change = single_string("Would you like to re-enter your customer "
+                               "information? Y/N ", ['Y', 'N'])
         if change == "Y":
             # deleting what they have just entered to re-enter
             keys_to_remove = ['Name', 'Type', 'Address', 'Phone']
@@ -344,8 +364,8 @@ def delivery_pickup(d):
 
 def add_to_order(p, o, d):
     """
-        Function that allows a user to add to their order, duplicating values from the pizza list, adding to their
-        order list with the quantity
+        Function that allows a user to add to their order, duplicating values
+        from the pizza list, adding to their order list with the quantity
 
         :param p: list
         :param o: list
@@ -358,11 +378,14 @@ def add_to_order(p, o, d):
     while True:
         line_header()
         # asking user what pizza they want and how much
-        pizza = get_integer("Please enter the index number of the pizza you would like to order: ", 0, 9)
-        quantity = get_integer("Please enter the number of {} pizzas that you would like: ".format(p[pizza][0]), 1, 10)
+        pizza = get_integer("Please enter the index number of the pizza you "
+                            "would like to order: ", 0, 9)
+        quantity = get_integer("Please enter the number of {} pizzas that you "
+                               "would like: ".format(p[pizza][0]), 1, 10)
         line_header()
 
-        # ensuring that if the user wants more of a certain pizza type, it will not appear twice in the menu
+        # ensuring that if the user wants more of a certain pizza type, it will
+        # not appear twice in the menu
         order_updated = False
         c = 0
         # if the pizza type is already in their order
@@ -371,14 +394,16 @@ def add_to_order(p, o, d):
                 o[c][2] = current_o[2] + quantity
                 order_updated = True
             c += 1
-        # if the pizza is not present in their order, then adds new type and amount
+        # if the pizza is not present in their order, then adds new type
+        # and amount
         if not order_updated:
             addition = [p[pizza][0], p[pizza][1], quantity]
             o.append(addition)
 
         # asking if they want to add another pizza to their order
-        add = single_string("Please enter 'Y' if you would like to order something else, or 'N' to quit the function: ",
-                            ['Y', 'N'])
+        add = single_string("Please enter 'Y' if you would like to order "
+                            "something else, or 'N' to quit the "
+                            "function: ", ['Y', 'N'])
         # if not, print what they have ordered with the cost and return values
         if add == "N":
             print("Your order is now:")
@@ -391,8 +416,9 @@ def add_to_order(p, o, d):
 
 def edit_order(o, d):
     """
-    Function that allows the user to edit their order, change the quantity what they have currently ordered and remove
-    certain types, changes stored in list and dictionary
+    Function that allows the user to edit their order, change the quantity what
+    they have currently ordered and remove certain types, changes stored in
+    list and dictionary
 
     :param o: list
     :param d: dictionary
@@ -405,10 +431,12 @@ def edit_order(o, d):
     while True:
         line_header()
         # asking for users input
-        pizza = get_integer("Please enter the index number of the pizza that you would like to change the amount of: ",
-                            0, len(o)-1)
-        quantity = get_integer("Please enter the amount of {} pizzas that you would now like: " 
-                               "(or enter 0 to delete it from your order) ".format(o[pizza][0]), 0, 10)
+        pizza = get_integer("Please enter the index number of the pizza that "
+                            "you would like to change the amount "
+                            "of: ", 0, len(o)-1)
+        quantity = get_integer("Please enter the amount of {} pizzas that you "
+                               "would now like: (or enter 0 to delete it from "
+                               "your order) ".format(o[pizza][0]), 0, 10)
         # if the user wishes to remove a type of pizza
         if quantity == 0:
             o.pop(pizza)
@@ -425,7 +453,8 @@ def edit_order(o, d):
         big_header()
 
         # asking user if they wish to edit anything else
-        add = single_string("Would you like to change anything else? Enter 'Y' to continue, or 'N' to quit the "
+        add = single_string("Would you like to change anything else? Enter "
+                            "'Y' to continue, or 'N' to quit the "
                             "function: ", ['Y', 'N'])
         if add == "N":
             return o, d
@@ -461,7 +490,8 @@ def review_order(o, d):
 
 def confirm_order(o, d):
     """
-        Function allowing the user to view and finalise their order, that will be stored and cleared
+        Function allowing the user to view and finalise their order, that will
+        be stored and cleared
 
         :param o: list
         :param d: dictionary
@@ -476,13 +506,15 @@ def confirm_order(o, d):
     while True:
         # asking user if they wish to confirm
         line_header()
-        user_input = single_string("Would you like to confirm your order? Y/N or 'E' to return to the main menu: ",
-                                   ['Y', 'N', 'E'])
+        user_input = single_string("Would you like to confirm your order? Y/N "
+                                   "or 'E' to return to the main "
+                                   "menu: ", ['Y', 'N', 'E'])
         # if yes:
         if user_input == "Y":
             line_header()
             print("Your order has been confirmed")
-            print("You will be taken back to the main menu where you can make another one")
+            print("You will be taken back to the main menu where you can make "
+                  "another one")
             line_header()
             # clearing order and sending to main function
             d.clear()
@@ -491,13 +523,15 @@ def confirm_order(o, d):
         # if no:
         elif user_input == "N":
             # asking if they wish to cancel their order
-            u_input = single_string("Would you like to cancel your order? (Y)es or 'E' to return to the main menu: ",
-                                    ['Y', 'E'])
+            u_input = single_string("Would you like to cancel your order? "
+                                    "(Y)es or 'E' to return to the main "
+                                    "menu: ", ['Y', 'E'])
             # if yes:
             if u_input == "Y":
                 line_header()
                 print("Your order has been cancelled")
-                print("You will be taken back to the main menu where you can make another one")
+                print("You will be taken back to the main menu where you can "
+                      "make another one")
                 line_header()
                 # clearing order and sending to main function
                 d.clear()
@@ -557,8 +591,10 @@ def main():
             print(output)
         big_header()
         # asking user for their option and running what they choose
-        user_choice = single_string("Please select an option: ", list(menu_dict.keys()), "You have entered an incorrect"
-                                    " input, please enter a letter present in the menu above")
+        user_choice = single_string("Please select an option: ",
+                                    list(menu_dict.keys()), "You have entered "
+                                    "an incorrect input, please enter a letter"
+                                    " present in the menu above")
         if user_choice == "P":
             line_header()
             pizza_menu(pizza_types)
@@ -566,7 +602,8 @@ def main():
         if user_choice == "A":
             add_to_order(pizza_types, order, customer_info)
         if user_choice in ["E", "R"]:
-            # checking if they have entered their pizza order before running functions
+            # checking if they have entered their pizza order before
+            # running functions
             if len(order) > 0:
                 if user_choice == "E":
                     edit_order(order, customer_info)
@@ -574,52 +611,42 @@ def main():
                     review_order(order, customer_info)
             else:
                 print("-")
-                print("You haven't added anything to your order yet! Please do that by selecting 'A'")
+                print("You haven't added anything to your order yet! Please "
+                      "do that by selecting 'A'")
                 print("-")
         if user_choice == "I":
             delivery_pickup(customer_info)
         if user_choice == "C":
-            # checking if they have entered their pizza order and customer customer details before running function
+            # checking if they have entered their pizza order and customer
+            # customer details before running function
             if len(order) > 0 and 'Type' in customer_info:
                 confirm_order(order, customer_info)
             else:
                 print("-")
-                print("You haven't added anything to your order or customer details yet! Please do that by"
-                      " selecting 'A' and/or 'I' in the main menu")
+                print("You haven't added anything to your order or customer "
+                      "details yet! Please do that by selecting 'A' and/or "
+                      "'I' in the main menu")
                 print("-")
         if user_choice == "Q":
-            # checking if they have already started entering information before quitting
+            # checking if they have already started entering information
+            # before quitting
             if len(order) > 0 or 'Type' in customer_info:
-                run = True
-                while run is True:
-                    # asking if they would still wish to quit
-                    print('-')
-                    print("You have already started an order and not yet confirmed it")
-                    user_input = single_string("Are you sure you wish to quit the program? Y/N: ", ['Y', 'N'])
-                    print('-')
-                    # if yes, ending loop to quit the program
-                    if user_input == "Y":
-                        run = False
-                        run_program = False
-                    # if no, returning to main menu
-                    if user_input == "N":
-                        print("You are returning to the main menu")
-
-            else:
-                # asking user if they still wish to quit, even without entering anything
-                user_input = single_string("Are you sure you wish to quit the program? Y/N: ", ['Y', 'N'])
                 print('-')
-                # if yes, ending loop to quit the program
-                if user_input == "Y":
-                    run_program = False
-                # if no, returning to main menu
-                if user_input == "N":
-                    print("You are returning to the main menu")
-                # quitting program
-            big_header()
-            print("Thank you, the program has ended")
-            big_header()
-            run_program = False
+                print("You have already started an order and not yet confirmed"
+                      " it")
+            print('-')
+            user_input = single_string("Are you sure you wish to quit the "
+                                       "program? Y/N: ", ['Y', 'N'])
+            # if yes, ending loop to quit the program
+            if user_input == "Y":
+                big_header()
+                print("Thank you, the program has ended")
+                big_header()
+                run_program = False
+            # otherwise, returning to main menu
+            else:
+                print('-')
+                print("You are returning to the main menu")
 
 
 # running main function and opening message
